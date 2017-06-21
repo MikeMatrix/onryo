@@ -1,0 +1,20 @@
+/* Colors */
+/* Shadows */
+nav {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  padding: 2px 10px;
+  background: rgba(31, 31, 31, 0.9); }
+  nav .name {
+    font-size: 14px;
+    color: #ddd; }
+    nav .name .icon {
+      margin-right: 3px;
+      vertical-align: text-bottom;
+      font-size: 16px;
+      color: #26c6da; }
+  nav .hp, nav .distance {
+    font-size: 11px;
+    opacity: 0.5;
+    color: #ddd; }
+  nav .distance {
+    text-align: right; }

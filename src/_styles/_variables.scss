@@ -1,0 +1,49 @@
+/* Colors */
+
+// Base Colors
+$background: rgba(0, 0, 0, 0.5);
+$background-dark: rgba(31, 31, 31, 0.9);
+$primary: #ddd;
+$primary-light: #eee;
+$highlight: #26c6da;
+
+// Role Colors
+$role-colors: (
+        tank: rgb(33, 150, 243),
+        healer: rgb(139, 195, 74),
+        dps: rgb(244, 67, 54),
+        pet: #444,
+        UNKNOWN: #444
+);
+
+$job-colors: (
+  // Tanks
+        PLD: rgb(21, 28, 100),
+        WAR: rgb(153, 23, 23),
+        DRK: rgb(136, 14, 79),
+  // Healers
+        WHM: rgb(117, 117, 117),
+        SCH: rgb(121, 134, 203),
+        AST: rgb(121, 85, 72),
+  // DPS
+        MNK: rgb(255, 152, 0),
+        DRG: rgb(63, 81, 181),
+        BRD: rgb(158, 157, 36),
+        NIN: rgb(211, 47, 47),
+        SMN: rgb(46, 125, 50),
+        BLM: rgb(126, 87, 194),
+        MCH: rgb(0, 151, 167),
+        SAM: rgb(255, 202, 40),
+        RDM: rgb(233, 30, 99),
+  // Pets
+        SMN_PET: rgba(46, 125, 50, 0.5),
+        SCH_PET: rgba(121, 134, 203, 0.5),
+        MCH_TURRET: rgba(0, 151, 167, 0.5),
+        CHOCOBO: #444
+);
+
+/* Shadows */
+
+$shadow-key-umbra-opacity: 0.2 !default;
+$shadow-key-penumbra-opacity: 0.14 !default;
+$shadow-ambient-shadow-opacity: 0.12 !default;
