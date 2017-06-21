@@ -16,8 +16,8 @@ class NavigationHeader extends Component {
                         {_.defaultTo(this.props.target.CurrentHP, '--')} / {_.defaultTo(this.props.target.MaxHP, '--')} ( {_.defaultTo(this.props.target.HPPercent, '--')}% )
                     </div>
                     <div className="distance col-xs">
-                        {_.defaultTo(this.props.target.Distance, '--')}m
-                        ( {_.defaultTo(this.props.target.EffectiveDistance, '--')}m )
+                        {_.defaultTo(this.props.target.Distance, '-- ')}m
+                        ( {_.defaultTo(this.props.target.EffectiveDistance, '-- ')}m )
                     </div>
                 </div>
             </nav>
