@@ -1,0 +1,8 @@
+@import "_styles/_variables.scss";
+
+.enmity-list {
+  position: relative;
+  min-height: 20px;
+  background: $background;
+  z-index: -1;
+}

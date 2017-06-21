@@ -1,0 +1,7 @@
+/* Colors */
+/* Shadows */
+.enmity-list {
+  position: relative;
+  min-height: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1; }

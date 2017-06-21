@@ -1,0 +1,65 @@
+/* Colors */
+/* Shadows */
+.entry {
+  position: relative;
+  padding: 3px 10px;
+  overflow: hidden;
+  color: #ddd; }
+  .entry .gauge, .entry .bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; }
+  .entry .gauge {
+    opacity: 0.75; }
+  .entry .bar {
+    width: 21px;
+    z-index: 1; }
+  .entry .bar.job-PLD {
+    background-color: #151c64; }
+  .entry .bar.job-WAR {
+    background-color: #991717; }
+  .entry .bar.job-DRK {
+    background-color: #880e4f; }
+  .entry .bar.job-WHM {
+    background-color: #757575; }
+  .entry .bar.job-SCH {
+    background-color: #7986cb; }
+  .entry .bar.job-AST {
+    background-color: #795548; }
+  .entry .bar.job-MNK {
+    background-color: #ff9800; }
+  .entry .bar.job-DRG {
+    background-color: #3f51b5; }
+  .entry .bar.job-BRD {
+    background-color: #9e9d24; }
+  .entry .bar.job-NIN {
+    background-color: #d32f2f; }
+  .entry .bar.job-SMN {
+    background-color: #2e7d32; }
+  .entry .bar.job-BLM {
+    background-color: #7e57c2; }
+  .entry .bar.job-MCH {
+    background-color: #0097a7; }
+  .entry .bar.job-SAM {
+    background-color: #ffca28; }
+  .entry .bar.job-RDM {
+    background-color: #e91e63; }
+  .entry .bar.job-PET {
+    background-color: rgba(46, 125, 50, 0.5); }
+  .entry .gauge.role-tank {
+    background-color: #2196f3; }
+  .entry .gauge.role-healer {
+    background-color: #8bc34a; }
+  .entry .gauge.role-dps {
+    background-color: #f44336; }
+  .entry .gauge.role-pet {
+    background-color: #444; }
+  .entry .gauge.role-UNKNOWN {
+    background-color: #444; }
+  .entry .name, .entry .enmity-value {
+    position: relative;
+    opacity: 1;
+    flex-basis: auto; }
+  .entry .enmity-value {
+    text-align: right; }

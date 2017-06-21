@@ -2,19 +2,26 @@ import React, {Component} from "react";
 import "./App.scss";
 import NavigationHeader from "./NavigationHeader";
 import EnmityList from "./EnmityList";
+import * as _ from "lodash/util";
 
 class App extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
             target: {},
             entries: {}
         };
+
+        this.updateData = this.updateData.bind(this);
     }
 
     render() {
         return (
-            <div><NavigationHeader target={this.state.target}/><EnmityList entries={this.state.entries}/></div>
+            <div>
+                <NavigationHeader target={this.state.target}/>
+                <EnmityList entries={this.state.entries}/>
+            </div>
         );
     }
 
@@ -28,8 +35,8 @@ class App extends Component {
 
     updateData(data) {
         this.setState({
-            target: data.detail.Enmity.Target,
-            entries: data.detail.Enmity.Entries
+            target: _.defaultTo(data.detail.Enmity.Target, {}),
+            entries: _.defaultTo(data.detail.Enmity.Entries, {})
         });
     }
 }
