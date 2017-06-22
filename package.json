@@ -1,6 +1,7 @@
 {
   "name": "onryo",
   "version": "0.1.0",
+  "private": true,
   "homepage": "https://mikematrix.github.io/onryo/",
   "dependencies": {
     "flexboxgrid": "^6.3.1",
