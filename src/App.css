@@ -1,2 +1,10 @@
-EnmityList, NavigationHeader {
-  position: relative; }
+.app:not(.hide-resize)::after {
+  display: block;
+  content: '';
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border: 8px solid;
+  border-color: transparent rgba(127, 127, 127, 0.3) rgba(127, 127, 127, 0.3) transparent; }

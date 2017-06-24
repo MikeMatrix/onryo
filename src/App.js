@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import "./App.scss";
+import "./App.css";
 import NavigationHeader from "./NavigationHeader";
 import EnmityList from "./EnmityList";
 import * as _ from "lodash/util";
@@ -10,15 +10,17 @@ class App extends Component {
 
         this.state = {
             target: {},
-            entries: {}
+            entries: {},
+            isLocked: false
         };
 
         this.updateData = this.updateData.bind(this);
+        this.updateState = this.updateState.bind(this);
     }
 
     render() {
         return (
-            <div>
+            <div className={"app " + (this.state.isLocked ? 'hide-resize' : '')}>
                 <NavigationHeader target={this.state.target}/>
                 <EnmityList entries={this.state.entries}/>
             </div>
@@ -27,16 +29,24 @@ class App extends Component {
 
     componentDidMount() {
         document.addEventListener('onOverlayDataUpdate', this.updateData);
+        document.addEventListener('onOverlayStateUpdate', this.updateState);
     }
 
     componentWillUnmount() {
         document.removeEventListener('onOverlayDataUpdate', this.updateData);
+        document.removeEventListener('onOverlayStateUpdate', this.updateState);
     }
 
-    updateData(data) {
+    updateData(event) {
         this.setState({
-            target: _.defaultTo(data.detail.Enmity.Target, {}),
-            entries: _.defaultTo(data.detail.Enmity.Entries, {})
+            target: _.defaultTo(event.detail.Enmity.Target, {}),
+            entries: _.defaultTo(event.detail.Enmity.Entries, {})
+        });
+    }
+
+    updateState(event) {
+        this.setState({
+            isLocked: _.defaultTo(event.detail.isLocked, false)
         });
     }
 }
