@@ -6,16 +6,16 @@ class NavigationHeader extends Component {
     render() {
         return (
             <nav className="navHeader">
-                <div className="row">
-                    <div className="name col-xs">
+                <div className="description">
+                    <div className="name">
                         <i className="icon material-icons">gps_fixed</i>{_.defaultTo(this.props.target.Name, '--')}
                     </div>
                 </div>
-                <div className="row between-xs">
-                    <div className="hp col-xs">
+                <div className="details">
+                    <div className="hp">
                         {_.defaultTo(this.props.target.CurrentHP, '--')} / {_.defaultTo(this.props.target.MaxHP, '--')} ( {_.defaultTo(this.props.target.HPPercent, '--')}% )
                     </div>
-                    <div className="distance col-xs">
+                    <div className="distance">
                         {_.defaultTo(this.props.target.Distance, '-- ')}m
                         ( {_.defaultTo(this.props.target.EffectiveDistance, '-- ')}m )
                     </div>
