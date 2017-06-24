@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import "./EnmityList.css";
 import * as _ from "lodash/collection";
-import EnmityListEntry from "./EnmityListEntry";
+import EnmityListEntry from "../EnmityListEntry/EnmityListEntry";
 
 class EnmityList extends Component {
     render() {

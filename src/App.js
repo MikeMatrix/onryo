@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import "./App.css";
-import NavigationHeader from "./NavigationHeader";
-import EnmityList from "./EnmityList";
+import NavigationHeader from "./component/NavigationHeader/NavigationHeader";
+import EnmityList from "./component/EnmityList/EnmityList";
 import * as _ from "lodash/util";
 
 class App extends Component {

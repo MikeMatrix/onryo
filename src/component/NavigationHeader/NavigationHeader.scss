@@ -1,5 +1,5 @@
-@import "_styles/_mixins.scss";
-@import "_styles/_variables.scss";
+@import "../../_styles/_mixins";
+@import "../../_styles/_variables";
 
 .navHeader {
   @include shadow-2dp();

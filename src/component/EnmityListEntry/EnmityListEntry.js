@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "./EnmityListEntry.css";
-import Job from "./Job";
+import Job from "../../helper/Job";
 
 class EnmityListEntry extends Component {
     constructor(props) {
