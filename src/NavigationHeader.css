@@ -12,10 +12,14 @@
       vertical-align: text-bottom;
       font-size: 16px;
       color: #26c6da; }
+  .navHeader .details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
   .navHeader .hp, .navHeader .distance {
     font-size: 11px;
     opacity: 0.5;
     color: #ddd;
-    flex-basis: auto; }
+    flex: 1 1 auto; }
   .navHeader .distance {
-    text-align: right; }
+    flex-grow: 0; }

@@ -1,6 +1,7 @@
 /* Colors */
 /* Shadows */
 .entry {
+  display: flex;
   position: relative;
   padding: 3px 10px;
   overflow: hidden;
@@ -11,9 +12,20 @@
     left: 0;
     height: 100%; }
   .entry .gauge {
-    opacity: 0.75; }
+    left: 5px;
+    opacity: 0.8; }
+  .entry .gauge.role-tank {
+    background-color: #2196f3; }
+  .entry .gauge.role-healer {
+    background-color: #8bc34a; }
+  .entry .gauge.role-dps {
+    background-color: #f44336; }
+  .entry .gauge.role-pet {
+    background-color: #444; }
+  .entry .gauge.role-UNKNOWN {
+    background-color: #444; }
   .entry .bar {
-    width: 21px;
+    width: 5px;
     z-index: 1; }
   .entry .bar.job-PLD {
     background-color: #151c64; }
@@ -47,19 +59,9 @@
     background-color: #e91e63; }
   .entry .bar.job-PET {
     background-color: rgba(46, 125, 50, 0.5); }
-  .entry .gauge.role-tank {
-    background-color: #2196f3; }
-  .entry .gauge.role-healer {
-    background-color: #8bc34a; }
-  .entry .gauge.role-dps {
-    background-color: #f44336; }
-  .entry .gauge.role-pet {
-    background-color: #444; }
-  .entry .gauge.role-UNKNOWN {
-    background-color: #444; }
   .entry .name, .entry .enmity-value {
     position: relative;
-    opacity: 1;
-    flex-basis: auto; }
+    flex: 1 1 auto;
+    opacity: 1; }
   .entry .enmity-value {
-    text-align: right; }
+    flex-grow: 0; }

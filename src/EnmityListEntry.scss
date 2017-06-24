@@ -1,6 +1,9 @@
 @import "_styles/_variables";
 
+$jobbar-width: 5px;
+
 .entry {
+  display: flex;
   position: relative;
   padding: 3px 10px;
   overflow: hidden;
@@ -14,11 +17,18 @@
   }
 
   .gauge {
-    opacity: 0.75;
+    left: $jobbar-width;
+    opacity: 0.8;
+  }
+
+  @each $role, $role-color in $role-colors {
+    .gauge.role-#{$role} {
+      background-color: $role-color;
+    }
   }
 
   .bar {
-    width: 21px;
+    width: $jobbar-width;
     z-index: 1;
   }
 
@@ -28,19 +38,13 @@
     }
   }
 
-  @each $role, $role-color in $role-colors {
-    .gauge.role-#{$role} {
-      background-color: $role-color;
-    }
-  }
-
   .name, .enmity-value {
     position: relative;
+    flex: 1 1 auto;
     opacity: 1;
-    flex-basis: auto;
   }
 
   .enmity-value {
-    text-align: right;
+    flex-grow: 0;
   }
 }

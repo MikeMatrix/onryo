@@ -14,14 +14,14 @@ class EnmityListEntry extends Component {
 
     render() {
         return (
-            <div className={"entry row"}>
+            <div className={"entry"}>
                 <div className={"bar job-" + this.state.job}/>
                 <div className={"gauge role-" + this.state.role}
                      style={{width: this.props.entry.HateRate + "%"}}/>
-                <div className="name col-xs">
+                <div className="name">
                     {this.props.entry.isMe ? 'YOU' : this.props.entry.Name}
                     </div>
-                <div className="enmity-value col-xs">
+                <div className="enmity-value">
                     {this.props.entry.EnmityString}</div>
             </div>
         );
