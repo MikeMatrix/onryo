@@ -7,10 +7,14 @@ class Job {
         'PLD': 'tank',
         'WAR': 'tank',
         'DRK': 'tank',
+        'GNB': 'tank',
+        'GLD': 'tank',
+        'MRD': 'tank',
         // Healers
         'WHM': 'healer',
         'SCH': 'healer',
         'AST': 'healer',
+        'CNJ': 'healer',
         // DPS
         'MNK': 'dps',
         'DRG': 'dps',
@@ -21,6 +25,13 @@ class Job {
         'MCH': 'dps',
         'SAM': 'dps',
         'RDM': 'dps',
+        'DNC': 'dps',
+        'BLU': 'dps',
+        'PGL': 'dps',
+        'LNC': 'dps',
+        'ARC': 'dps',
+        'THM': 'dps',
+        'ROG': 'dps',
         // PET
         'PET': 'pet'
     };
