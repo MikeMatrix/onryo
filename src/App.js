@@ -28,19 +28,23 @@ class App extends Component {
     }
 
     componentDidMount() {
-        document.addEventListener('onOverlayDataUpdate', this.updateData);
+        document.addEventListener('EnmityTargetData', this.updateData);
         document.addEventListener('onOverlayStateUpdate', this.updateState);
     }
 
     componentWillUnmount() {
-        document.removeEventListener('onOverlayDataUpdate', this.updateData);
+        document.removeEventListener('EnmityTargetData', this.updateData);
         document.removeEventListener('onOverlayStateUpdate', this.updateState);
     }
 
-    updateData(event) {
+    updateData(enmity) {
+        if (enmity.Entries === null) {
+            enmity.Entries = [];
+        }
+
         this.setState({
-            target: _.defaultTo(event.detail.Enmity.Target, {}),
-            entries: _.defaultTo(event.detail.Enmity.Entries, {})
+            target: _.defaultTo(enmity.Target, {}),
+            entries: _.defaultTo(enmity.Entries, {})
         });
     }
 
