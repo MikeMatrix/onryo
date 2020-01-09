@@ -1,9 +1,19 @@
 import React, {Component} from "react";
 import "./NavigationHeader.css";
-import * as _ from "lodash/util";
+import * as _ from "lodash";
 
 class NavigationHeader extends Component {
+    hpPercentFormat = new Intl.NumberFormat(undefined, {maximumFractionDigits: 2, minimumFractionDigits: 2});
+
     render() {
+        const {target} = this.props;
+
+        const {CurrentHP, MaxHP, Distance, EffectiveDistance} = target;
+
+        const hp = _.toNumber(CurrentHP) || 0;
+        const maxHp = _.toNumber(MaxHP) || 0;
+        const HPPercent = this.hpPercentFormat.format((hp / maxHp) || 0);
+
         return (
             <nav className="navHeader">
                 <div className="description">
@@ -13,11 +23,11 @@ class NavigationHeader extends Component {
                 </div>
                 <div className="details">
                     <div className="hp">
-                        {_.defaultTo(this.props.target.CurrentHP, '--')} / {_.defaultTo(this.props.target.MaxHP, '--')} ( {_.defaultTo(this.props.target.HPPercent, '--')}% )
+                        {_.defaultTo(CurrentHP, '--')} / {_.defaultTo(MaxHP, '--')} ( {_.defaultTo(HPPercent, '--')}% )
                     </div>
                     <div className="distance">
-                        {_.defaultTo(this.props.target.Distance, '-- ')}m
-                        ( {_.defaultTo(this.props.target.EffectiveDistance, '-- ')}m )
+                        {_.defaultTo(Distance, '-- ')}m
+                        ( {_.defaultTo(EffectiveDistance, '-- ')}m )
                     </div>
                 </div>
             </nav>

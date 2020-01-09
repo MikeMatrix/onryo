@@ -28,16 +28,18 @@ class App extends Component {
     }
 
     componentDidMount() {
-        document.addEventListener('EnmityTargetData', this.updateData);
-        document.addEventListener('onOverlayStateUpdate', this.updateState);
+        window.addOverlayListener('EnmityTargetData', this.updateData);
+        window.addOverlayListener('onOverlayStateUpdate', this.updateState);
+        window.startOverlayEvents();
     }
 
     componentWillUnmount() {
-        document.removeEventListener('EnmityTargetData', this.updateData);
-        document.removeEventListener('onOverlayStateUpdate', this.updateState);
+        window.removeOverlayListener('EnmityTargetData', this.updateData);
+        window.removeOverlayListener('onOverlayStateUpdate', this.updateState);
     }
 
     updateData(enmity) {
+        console.log(enmity)
         if (enmity.Entries === null) {
             enmity.Entries = [];
         }
