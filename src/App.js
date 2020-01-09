@@ -39,7 +39,6 @@ class App extends Component {
     }
 
     updateData(enmity) {
-        console.log(enmity)
         if (enmity.Entries === null) {
             enmity.Entries = [];
         }
