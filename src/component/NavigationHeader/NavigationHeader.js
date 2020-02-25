@@ -12,7 +12,7 @@ class NavigationHeader extends Component {
 
         const hp = _.toNumber(CurrentHP) || 0;
         const maxHp = _.toNumber(MaxHP) || 0;
-        const HPPercent = this.hpPercentFormat.format((hp / maxHp) || 0) * 100;
+        const HPPercent = this.hpPercentFormat.format(((hp / maxHp) || 0) * 100);
 
         return (
             <nav className="navHeader">
