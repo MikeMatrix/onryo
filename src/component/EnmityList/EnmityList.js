@@ -1,16 +1,13 @@
-import React, {Component} from "react";
-import "./EnmityList.css";
-import * as _ from "lodash/collection";
-import EnmityListEntry from "../EnmityListEntry/EnmityListEntry";
+import React from 'react'
+import EnmityListEntry from '../EnmityListEntry/EnmityListEntry'
+import './EnmityList.css'
 
-class EnmityList extends Component {
-    render() {
-        let list = _.map(this.props.entries, (entry) => <EnmityListEntry key={entry.ID} entry={entry}/>);
-
-        return (
-            <div className="enmity-list">{list}</div>
-        );
-    }
+const EnmityList = ({entries}) => {
+    return (
+        <div className="enmity-list">
+            {entries.map(entry => <EnmityListEntry key={entry.ID} entry={entry}/>)}
+        </div>
+    )
 }
 
-export default EnmityList;
+export default EnmityList

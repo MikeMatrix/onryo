@@ -1,38 +1,34 @@
-import React, {Component} from "react";
-import "./NavigationHeader.css";
-import * as _ from "lodash";
+import {defaultTo, toNumber} from 'lodash'
+import React from 'react'
+import './NavigationHeader.css'
 
-class NavigationHeader extends Component {
-    hpPercentFormat = new Intl.NumberFormat(undefined, {maximumFractionDigits: 2, minimumFractionDigits: 2});
+const hpPercentFormat = new Intl.NumberFormat(undefined, {maximumFractionDigits: 2, minimumFractionDigits: 2})
 
-    render() {
-        const {target} = this.props;
+const NavigationHeader = ({target}) => {
+    const hp = toNumber(target?.CurrentHP)
+    const maxHp = toNumber(target?.MaxHP)
 
-        const {CurrentHP, MaxHP, Distance, EffectiveDistance} = target;
+    const hpPercent = hpPercentFormat.format((((hp || 0) / (maxHp || 0)) || 0) * 100)
 
-        const hp = _.toNumber(CurrentHP) || 0;
-        const maxHp = _.toNumber(MaxHP) || 0;
-        const HPPercent = this.hpPercentFormat.format(((hp / maxHp) || 0) * 100);
-
-        return (
-            <nav className="navHeader">
-                <div className="description">
-                    <div className="name">
-                        <i className="icon material-icons">gps_fixed</i>{_.defaultTo(this.props.target.Name, '--')}
-                    </div>
+    return (
+        <nav className="navHeader">
+            <div className="description">
+                <div className="name">
+                    <i className="icon material-icons">gps_fixed</i>
+                    {defaultTo(target?.Name, '--')}
                 </div>
-                <div className="details">
-                    <div className="hp">
-                        {_.defaultTo(CurrentHP, '--')} / {_.defaultTo(MaxHP, '--')} ( {_.defaultTo(HPPercent, '--')}% )
-                    </div>
-                    <div className="distance">
-                        {_.defaultTo(Distance, '-- ')}m
-                        ( {_.defaultTo(EffectiveDistance, '-- ')}m )
-                    </div>
+            </div>
+            <div className="details">
+                <div className="hp">
+                    {defaultTo(hp, '--')} / {defaultTo(maxHp, '--')} ( {defaultTo(hpPercent, '--')}% )
                 </div>
-            </nav>
-        );
-    }
+                <div className="distance">
+                    {defaultTo(target?.Distance, '-- ')}m
+                    ( {defaultTo(target?.EffectiveDistance, '-- ')}m )
+                </div>
+            </div>
+        </nav>
+    )
 }
 
-export default NavigationHeader;
+export default NavigationHeader

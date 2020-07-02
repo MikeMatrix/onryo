@@ -1,27 +1,28 @@
-import React, {Component} from "react";
-import "./EnmityListEntry.css";
-import Job from "../../helper/Job";
+import React from 'react'
+import {toJobName, toRoleName} from '../../helper/Job'
+import './EnmityListEntry.css'
 
-class EnmityListEntry extends Component {
-    enmityFormat = new Intl.NumberFormat()
+const enmityFormat = new Intl.NumberFormat()
 
-    render() {
-        const role = Job.toRoleName(this.props.entry);
-        const job = Job.toJobName(this.props.entry);
+const EnmityListEntry = ({entry}) => {
+    const role = toRoleName(entry)
+    const job = toJobName(entry)
 
-        return (
-            <div className={"entry"}>
-                <div className={"bar job-" + job}/>
-                <div className={"gauge role-" + role}
-                     style={{width: this.props.entry.HateRate + "%"}}/>
-                <div className="name">
-                    {this.props.entry.isMe ? 'YOU' : this.props.entry.Name}
-                    </div>
-                <div className="enmity-value">
-                    {this.enmityFormat.format(this.props.entry.Enmity || 0)}</div>
+    return (
+        <div className="entry">
+            <div className={'bar job-' + job}/>
+            <div
+                className={'gauge role-' + role}
+                style={{width: `${entry?.HateRate ?? 0}%`}}
+            />
+            <div className="name">
+                {entry?.isMe ? 'YOU' : entry?.Name}
             </div>
-        );
-    }
+            <div className="enmity-value">
+                {enmityFormat.format(entry?.Enmity || 0)}
+            </div>
+        </div>
+    )
 }
 
-export default EnmityListEntry;
+export default EnmityListEntry
