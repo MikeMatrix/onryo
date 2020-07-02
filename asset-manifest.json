@@ -1,6 +1,22 @@
 {
-  "main.css": "static/css/main.0748a34d.css",
-  "main.css.map": "static/css/main.0748a34d.css.map",
-  "main.js": "static/js/main.a76bcae0.js",
-  "main.js.map": "static/js/main.a76bcae0.js.map"
+  "files": {
+    "main.css": "/onryo/static/css/main.766126ab.chunk.css",
+    "main.js": "/onryo/static/js/main.0ca50508.chunk.js",
+    "main.js.map": "/onryo/static/js/main.0ca50508.chunk.js.map",
+    "runtime-main.js": "/onryo/static/js/runtime-main.ef088966.js",
+    "runtime-main.js.map": "/onryo/static/js/runtime-main.ef088966.js.map",
+    "static/js/2.fd34fc83.chunk.js": "/onryo/static/js/2.fd34fc83.chunk.js",
+    "static/js/2.fd34fc83.chunk.js.map": "/onryo/static/js/2.fd34fc83.chunk.js.map",
+    "index.html": "/onryo/index.html",
+    "precache-manifest.27e936df54c31efae5268b9d1f862958.js": "/onryo/precache-manifest.27e936df54c31efae5268b9d1f862958.js",
+    "service-worker.js": "/onryo/service-worker.js",
+    "static/css/main.766126ab.chunk.css.map": "/onryo/static/css/main.766126ab.chunk.css.map",
+    "static/js/2.fd34fc83.chunk.js.LICENSE.txt": "/onryo/static/js/2.fd34fc83.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ef088966.js",
+    "static/js/2.fd34fc83.chunk.js",
+    "static/css/main.766126ab.chunk.css",
+    "static/js/main.0ca50508.chunk.js"
+  ]
 }
